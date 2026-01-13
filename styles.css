@@ -1,0 +1,192 @@
+@font-face {
+    font-family: ubuntu;
+    src: url(./assets/Ubuntu-Regular.ttf);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    font-family: ubuntu, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+main {
+    flex: 1;
+    max-width: 80vw;
+}
+
+/* header */
+.selfIntro {
+    padding: 1rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    background-color: silver;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.icons {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.2s;
+}
+
+.selfIntro .imgContainer, footer .imgContainer {
+    max-width: 450px;
+    max-height: 500px;
+}
+
+.landscape {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+/* works */
+.works {
+    background-color: aliceblue;
+    padding: 1rem;
+    margin-top: 50px;
+}
+
+.work-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 40px;
+}
+
+.project {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: 3px solid;
+    background-color: rgb(208, 247, 247);
+    border-radius: 10px;
+}
+
+.project img:hover {
+    cursor: pointer;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.project-header .icon-container {
+    display: flex;
+    gap: 1rem;
+}
+
+.imgContainer{
+    overflow: hidden;
+    position: relative;
+}
+
+.screenshots {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(241, 240, 240, 0.89); 
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.imgContainer:hover .img-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* tooltip */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  width: 130px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  left: 110%;
+  z-index: 1;
+}
+
+.icon-container .tooltiptext {
+    width: 160px;
+    top: 100%;
+    left: 65%;
+    margin-left: -80px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+/* footer */ 
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 50px;
+    background-color: azure;
+    padding: 1rem;
+    min-width: 80vw;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+.email-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+footer .icon-container {
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+    .selfIntro {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    footer {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+}
+
+.text-container {
+    max-width: 65ch;
+}
+
+/* icons */
+.icons:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
