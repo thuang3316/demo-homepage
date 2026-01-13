@@ -113,7 +113,6 @@ main {
 
 .imgContainer:hover .img-overlay {
   opacity: 1;
-  pointer-events: auto;
 }
 
 /* tooltip */
